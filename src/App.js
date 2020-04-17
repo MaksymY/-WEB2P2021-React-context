@@ -4,16 +4,13 @@ import './App.css';
 import { Login } from './Login'
 
 function App() {
+  const [isAuth, changeAuth ] = React.useState( false )
+  
   return (
     <div className="App">
-      <AuthentificationContext.Consumer>
-      {
-          value => 
-          (
-              value.map( s => <p> s.isAuth </p> )
-          )
-      }
-      </AuthentificationContext.Consumer>
+      <AuthentificationContext.Provider value={{ isAuth, changeAuth }}>
+          <Login/>
+      </AuthentificationContext.Provider>
       <Login/>
     </div>
   );

@@ -1,14 +1,13 @@
 import React from 'react'
 import AuthentificationContext from './AuthentificationContext';
-
+import { Log } from "./Log"
 export const Login = () => {
     return (
-        <div className="Login">
-            <header className="App-header">
-                <AuthentificationContext.Provider value={[{isAuth: "it work ?"}, {isAuth: "yes it work !"}]}>
-                    <button>Test</button>
-                </AuthentificationContext.Provider>
-            </header>
-        </div>
+        <>
+            <h1>Authentificateur</h1>
+            <AuthentificationContext.Consumer>
+                <Log/>
+            </AuthentificationContext.Consumer>
+        </>
     );
 }
